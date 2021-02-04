@@ -1,0 +1,31 @@
+<!-- templates/index.html -->  
+<html>
+   <head>
+       <title>QR Code Video Conference Call Background</title>
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+   </head>
+   <body>
+       <div style="margin-left:50px;">
+
+          <h2>QR Code Video Conference Call Background</h2>
+          <p>Are you tired of all those snazzy video conference call background images?
+          <p>Do you want to let your inner geek express itself using a background image displaying your very own QR code?
+          <p>Do you enjoy video bombing unsuspecting people by embedding your encoded message or an encoded URL?
+          <p>Well then this is the site for you.
+          <p>Simply fill in this form with a prefered text message or a destination URL and a 1280x720 white image background called "background.png" will be generated with the embedded QR code in the uper left.  Set this image as your background in your favorite video conferencing tool and hopefully you will appear in the center with your QR code visible over your shoulder.
+          <p>All it takes then is for some curious observer to open the QR code with their phone and..... well what happens next is your fault.
+          <p><br>
+          <form action = "/generate_background" method = "POST">
+             <p>Text or URL to encode: <input type = "text" name = "Message" size=100 /></p>
+             <p><input type = "submit" value = "Generate background.png" /></p>
+          </form>
+          <p><br><h3>A sample background:</h3>
+          <p>Encoding <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">https://www.youtube.com/watch?v=dQw4w9WgXcQ</a> in the image generates:
+          <p>
+          <img src='static/rickrolled.png' width=600 style="border:5px solid black">
+          <p>
+          <br>Service written by Darren Popham, &copy;2020
+          <br>Make sure to visit my site at <a href="https://darrenpopham.com">darrenpopham.com</a>
+      </div>
+   </body>
+</html>

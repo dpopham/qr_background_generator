@@ -1,0 +1,16 @@
+[Unit]
+Description=Gunicorn instance to serve qr background generator
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/qr_background_generator
+Environment="PATH=/var/www/qr_background_generator/vpython/bin"
+ExecStart=/var/www/qr_background_generator/vpython/bin/gunicorn --workers 2 --bind=127.0.0.1:5555 --log-level=info qr:app
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=qr
+
+[Install]
+WantedBy=multi-user.target

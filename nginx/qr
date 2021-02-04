@@ -1,0 +1,12 @@
+#######################################
+#
+# Q R   S E R V E R
+#
+# A sample location to add to your server config
+# to proxy through to the QR code service.
+#
+#######################################
+
+location / {
+        proxy_pass http://localhost:5555/;
+}
