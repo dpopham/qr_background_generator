@@ -1,0 +1,24 @@
+[Unit]
+Description=Gunicorn service for QR Background Generator
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/qr_background_generator
+Environment="PATH=/var/www/qr_background_generator/.venv/bin"
+Environment="QR_HOST=127.0.0.1"
+Environment="QR_PORT=5555"
+Environment="QR_DEBUG=false"
+ExecStart=/var/www/qr_background_generator/.venv/bin/gunicorn --workers 2 --bind 127.0.0.1:5555 --access-logfile - --error-logfile - qr:app
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/www/qr_background_generator
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Generate a video-conference background containing a QR code.">
+  <title>QR Code Video Conference Background</title>
+  <style>
+    :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+    body { margin: 0; background: #f5f7fa; color: #1f2937; }
+    main { max-width: 760px; margin: 4rem auto; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 8px 30px #0001; }
+    textarea { width: 100%; min-height: 7rem; box-sizing: border-box; padding: .75rem; font: inherit; }
+    button { margin-top: 1rem; padding: .7rem 1rem; font: inherit; cursor: pointer; }
+    img { max-width: 100%; height: auto; border: 1px solid #bbb; }
+    @media (prefers-color-scheme: dark) { body { background: #111827; color: #e5e7eb; } main { background: #1f2937; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>QR Code Video Conference Background</h1>
+
+  <p>Are you tired of all those snazzy video conference call background images?
+  <p>Want to video bomb unsuspecting people using a background with an embedded message?
+  <p>Use this form with a message or URL and a 1280x720 white image background called "background.png" will be generated.  Set the image as your video background and you should appear in the center with the QR code over your shoulder.
+  <p><br>
+  <p>Enter text or a URL. The service creates a 1280×720 PNG with the QR code in the upper-left corner.</p>
+
+  <form action="{{ url_for('background') }}" method="post">
+    <label for="message">Text or URL to encode</label>
+    <textarea id="message" name="Message" maxlength="2048" required autofocus></textarea>
+    <br>
+    <button type="submit">Generate background.png</button>
+  </form>
+
+  <h2>Example</h2>
+  <p>Encoding <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">https://www.youtube.com/watch?v=dQw4w9WgXcQ</a> generates:
+  <p>
+  <img src='static/rickrolled.png' width=600 style="border:5px solid black">
+  <p>
+</main>
+</body>
+</html>
