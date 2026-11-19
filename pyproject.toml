@@ -17,7 +17,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "gunicorn>=23,<27",
+    "gunicorn>=23,<28",
     "pytest>=8,<9",
     "ruff>=0.13,<0.18",
 ]
